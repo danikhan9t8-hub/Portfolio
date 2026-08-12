@@ -394,57 +394,43 @@
             line-height: 1.9;
         }
 
-        .skills-grid {
+        /* ============================================================ */
+        /*  SKILLS SECTION (MOVED HERE - SINGLE LINE)                   */
+        /* ============================================================ */
+        .skills-section {
+            padding: 80px 5%;
+            background: var(--bg);
+        }
+        .skills-icons-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px 40px;
-            margin-top: 30px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        .skill-item {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
+        .skill-icon-item {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 25px 10px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: 0.4s;
         }
-        .skill-item .skill-label {
-            display: flex;
-            justify-content: space-between;
+        .skill-icon-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.08);
+        }
+        .skill-icon-item i {
+            font-size: 44px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: block;
+        }
+        .skill-icon-item span {
+            font-size: 16px;
             font-weight: 500;
             color: #eee;
-            font-size: 14px;
-        }
-        .skill-bar {
-            width: 100%;
-            height: 6px;
-            background: #2a2a2a;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .skill-bar .fill {
-            height: 100%;
-            border-radius: 10px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-            width: 0%;
-            transform-origin: left;
-            transition: width 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        /* skill widths */
-        .skills-grid.visible .html-fill {
-            width: 95%;
-        }
-        .skills-grid.visible .css-fill {
-            width: 90%;
-        }
-        .skills-grid.visible .js-fill {
-            width: 85%;
-        }
-        .skills-grid.visible .php-fill {
-            width: 88%;
-        }
-        .skills-grid.visible .custom-wp-fill {
-            width: 82%;
-        }
-        .skills-grid.visible .wp-fill {
-            width: 80%;
         }
 
         /* ============================================================ */
@@ -452,7 +438,7 @@
         /* ============================================================ */
         .services {
             padding: 80px 5%;
-            background: var(--bg);
+            background: var(--bg-alt);
         }
         .services-grid {
             display: grid;
@@ -474,7 +460,6 @@
             isolation: isolate;
         }
 
-        /* animated red conic sweep, revealed on hover as a glowing border */
         .service-card::before {
             content: '';
             position: absolute;
@@ -557,7 +542,7 @@
         /* ============================================================ */
         .portfolio {
             padding: 80px 5%;
-            background: var(--bg-alt);
+            background: var(--bg);
         }
         .portfolio-grid {
             display: grid;
@@ -619,6 +604,72 @@
         .portfolio-card .content .btn-small:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        /* ============================================================ */
+        /*  TESTIMONIALS                                                */
+        /* ============================================================ */
+        .testimonials {
+            padding: 80px 5%;
+            background: var(--bg-alt);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 10px;
+        }
+        .testimonial-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 30px 28px;
+            border: 1px solid var(--border);
+            transition: 0.4s;
+            position: relative;
+        }
+        .testimonial-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.08);
+        }
+        .testimonial-card .quote-icon {
+            font-size: 28px;
+            color: var(--accent);
+            opacity: 0.3;
+            margin-bottom: 10px;
+        }
+        .testimonial-card p {
+            color: #ccc;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .testimonial-card .client {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-top: 1px solid #222;
+            padding-top: 16px;
+        }
+        .testimonial-card .client .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: #fff;
+        }
+        .testimonial-card .client .info h4 {
+            color: #fff;
+            font-size: 16px;
+        }
+        .testimonial-card .client .info span {
+            color: #888;
+            font-size: 13px;
         }
 
         /* ============================================================ */
@@ -795,6 +846,33 @@
             font-size: 14px;
         }
 
+        /* footer social icons */
+        .footer-social-icons {
+            display: flex;
+            gap: 14px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+        .footer-social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            color: #aaa;
+            font-size: 18px;
+            transition: 0.3s;
+            border: 1px solid #2a2a2a;
+        }
+        .footer-social-icons a:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
         /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
@@ -851,6 +929,13 @@
             .portfolio-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .skills-icons-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -899,6 +984,9 @@
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
+            .skills-icons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
             .footer-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -910,9 +998,6 @@
             .about-img img {
                 max-width: 300px;
                 margin: 0 auto;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr;
             }
             .section-title {
                 font-size: 30px;
@@ -926,6 +1011,16 @@
         @media (max-width: 480px) {
             .hero-content h1 {
                 font-size: 28px;
+            }
+            .skills-icons-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .skill-icon-item {
+                padding: 18px 8px;
+            }
+            .skill-icon-item i {
+                font-size: 32px;
             }
         }
 
@@ -955,8 +1050,10 @@
             <ul>
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -1011,32 +1108,40 @@
                     along with backend development using PHP and WordPress for building dynamic
                     and scalable web applications that deliver results.
                 </p>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-label"><span>HTML</span><span>95%</span></div>
-                        <div class="skill-bar"><div class="fill html-fill"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-label"><span>CSS</span><span>90%</span></div>
-                        <div class="skill-bar"><div class="fill css-fill"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-label"><span>JavaScript</span><span>85%</span></div>
-                        <div class="skill-bar"><div class="fill js-fill"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-label"><span>PHP</span><span>88%</span></div>
-                        <div class="skill-bar"><div class="fill php-fill"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-label"><span>Custom WordPress</span><span>82%</span></div>
-                        <div class="skill-bar"><div class="fill custom-wp-fill"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-label"><span>WordPress</span><span>80%</span></div>
-                        <div class="skill-bar"><div class="fill wp-fill"></div></div>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!--  SKILLS SECTION (MOVED HERE - AFTER ABOUT)                    -->
+    <!-- ============================================================ -->
+    <section id="skills" class="skills-section">
+        <h2 class="section-title scroll-animate">Technologies <span>I Use</span></h2>
+        <p class="section-subtitle scroll-animate">My core skills and tools.</p>
+        <div class="skills-icons-grid">
+            <div class="skill-icon-item scroll-animate">
+                <i class="fa-brands fa-html5"></i>
+                <span>HTML</span>
+            </div>
+            <div class="skill-icon-item scroll-animate">
+                <i class="fa-brands fa-css3-alt"></i>
+                <span>CSS</span>
+            </div>
+            <div class="skill-icon-item scroll-animate">
+                <i class="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+            </div>
+            <div class="skill-icon-item scroll-animate">
+                <i class="fa-brands fa-php"></i>
+                <span>PHP</span>
+            </div>
+            <div class="skill-icon-item scroll-animate">
+                <i class="fa-brands fa-wordpress"></i>
+                <span>WordPress</span>
+            </div>
+            <div class="skill-icon-item scroll-animate">
+                <i class="fa-solid fa-code"></i>
+                <span>Custom WP</span>
             </div>
         </div>
     </section>
@@ -1094,26 +1199,24 @@
         <h2 class="section-title scroll-animate">My <span>Portfolio</span></h2>
         <p class="section-subtitle scroll-animate">Some of my recent professional projects.</p>
         <div class="portfolio-grid">
-            <!-- Business Website Card — link updated to https://bfc-burger.site.je/ -->
             <div class="portfolio-card scroll-animate">
                 <div class="thumb">
                     <img src="./burger.jpg" alt="Business Website" />
                 </div>
                 <div class="content">
                     <h3>BFC Burger — Restaurant Website</h3>
-                    <p>Modern responsive solar & electrical website featuring product showcases, clean UI, energy solutions, and professional user experience.
-</p>
+                    <p>Modern responsive solar & electrical website featuring product showcases, clean UI, energy solutions, and professional user experience.</p>
                     <a href="https://bfc-burger.free.nf/" class="btn-small">View Project</a>
                 </div>
             </div>
             <div class="portfolio-card scroll-animate">
                 <div class="thumb">
-                    <img src="powerhouse.png " alt="E-Commerce" />
+                    <img src="powerhouse.png" alt="E-Commerce" />
                 </div>
                 <div class="content">
                     <h3>Power House — Solar & Electrical Solutions</h3>
                     <p>Modern solar website featuring responsive design, product showcases, clean UI, and smart energy solutions.</p>
-                    <a href="https://danikhan9t8-hub.github.io/Power--House/"  class="btn-small">View Project</a>
+                    <a href="https://danikhan9t8-hub.github.io/Power--House/" class="btn-small">View Project</a>
                 </div>
             </div>
             <div class="portfolio-card scroll-animate">
@@ -1123,7 +1226,49 @@
                 <div class="content">
                     <h3>Landing Page</h3>
                     <p>High conversion landing page for brands and startups.</p>
-                    <a href="#"  class="btn-small">View Project</a>
+                    <a href="#" class="btn-small">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!--  TESTIMONIALS SECTION                                         -->
+    <!-- ============================================================ -->
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title scroll-animate">What <span>Clients Say</span></h2>
+        <p class="section-subtitle scroll-animate">Real feedback from people I've worked with.</p>
+        <div class="testimonials-grid">
+            <!-- Testimonial 1: Khurram Khan -->
+            <div class="testimonial-card scroll-animate">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p>
+                    “Danial built our company website from scratch. He understood our vision perfectly
+                    and delivered a modern, fast, and visually stunning site. His attention to detail
+                    and coding skills are top-notch. Highly recommended!”
+                </p>
+                <div class="client">
+                    <div class="avatar">KK</div>
+                    <div class="info">
+                        <h4>Khurram Khan</h4>
+                        <span>CEO, TechVibe Solutions</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 2: Talha Nawaz -->
+            <div class="testimonial-card scroll-animate">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p>
+                    “Working with Danial was a pleasure. He revamped our e-commerce platform with a
+                    clean, responsive design that boosted our sales significantly. He's professional,
+                    punctual, and always goes the extra mile.”
+                </p>
+                <div class="client">
+                    <div class="avatar">TN</div>
+                    <div class="info">
+                        <h4>Talha Nawaz</h4>
+                        <span>CEO, NexGen Retail</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1177,8 +1322,10 @@
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -1196,6 +1343,14 @@
                 <p><i class="fa-solid fa-location-dot"></i> Mansehra, Pakistan</p>
                 <p><i class="fa-solid fa-envelope"></i> danikhan9t8@gmail.com</p>
                 <p><i class="fa-solid fa-phone"></i> +92 344 4842123</p>
+                <!-- Footer Social Icons (WhatsApp, Instagram, TikTok, GitHub, Facebook) -->
+                <div class="footer-social-icons">
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1211,15 +1366,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const scrollElements = document.querySelectorAll('.scroll-animate');
-            const skillsGrid = document.querySelector('.skills-grid');
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        if (entry.target.classList.contains('about-text')) {
-                            skillsGrid && skillsGrid.classList.add('visible');
-                        }
                     }
                 });
             }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
@@ -1231,9 +1382,6 @@
                     const rect = el.getBoundingClientRect();
                     if (rect.top < window.innerHeight) {
                         el.classList.add('visible');
-                        if (el.classList.contains('about-text')) {
-                            skillsGrid && skillsGrid.classList.add('visible');
-                        }
                     }
                 });
             }, 400);
@@ -1254,7 +1402,7 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            // Simple contact form feedback (no backend wired up yet)
+            // Simple contact form feedback
             const form = document.getElementById('contactForm');
             const status = document.getElementById('formStatus');
             form.addEventListener('submit', (e) => {
