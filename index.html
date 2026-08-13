@@ -449,7 +449,7 @@
         }
 
         /* ============================================================ */
-        /*  SKILLS SECTION — with progress bars                         */
+        /*  SKILLS SECTION — with progress bars & large counters        */
         /* ============================================================ */
         .skills-section {
             padding: 80px 5%;
@@ -496,7 +496,7 @@
             font-size: 15px;
             font-weight: 500;
             color: #eee;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             transition: color 0.35s ease;
         }
 
@@ -529,6 +529,21 @@
             color: #fff;
         }
 
+        /* --- Large percentage counter --- */
+        .skill-percent {
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1.2;
+            margin-bottom: 4px;
+            transition: color 0.3s;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .skill-icon-item:hover .skill-percent {
+            color: #fff;
+        }
+
         /* --- Progress bar --- */
         .skill-progress-wrap {
             width: 100%;
@@ -550,21 +565,6 @@
             border-radius: 6px;
             background: linear-gradient(90deg, var(--accent), var(--accent-2));
             transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .skill-progress-label {
-            display: flex;
-            justify-content: flex-end;
-            font-size: 12px;
-            font-weight: 600;
-            color: #888;
-            margin-top: 4px;
-            transition: color 0.3s;
-            letter-spacing: 0.3px;
-        }
-
-        .skill-icon-item:hover .skill-progress-label {
-            color: var(--accent-2);
         }
 
         /* ============================================================ */
@@ -1237,8 +1237,8 @@
                 font-size: 30px;
             }
 
-            .skill-progress-label {
-                font-size: 10px;
+            .skill-percent {
+                font-size: 26px;
             }
         }
 
@@ -1268,13 +1268,11 @@
         <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
         <nav>
             <ul>
-
-
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <!-- Skills & Testimonials removed from header -->
                 <li><a href="#services">Services</a></li>
-
-
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -1335,76 +1333,76 @@
     </section>
 
     <!-- ============================================================ -->
-    <!--  SKILLS SECTION — with progress bars & scroll animation       -->
+    <!--  SKILLS SECTION — with large counters & progress bars         -->
     <!-- ============================================================ -->
     <section id="skills" class="skills-section">
         <h2 class="section-title scroll-animate">Technologies <span>I Use</span></h2>
-        <p class="section-subtitle scroll-animate">My core skills &mdash; progress bars fill on scroll.</p>
+        <p class="section-subtitle scroll-animate">My core skills &mdash; percentages animate on scroll.</p>
         <div class="skills-icons-grid">
             <!-- HTML5: 95% -->
-            <div class="skill-icon-item scroll-animate" data-skill="95">
+            <div class="skill-icon-item scroll-animate" data-target="95">
                 <i class="fa-brands fa-html5"></i>
                 <span>HTML</span>
+                <div class="skill-percent" data-target="95">0%</div>
                 <div class="skill-progress-wrap">
                     <div class="skill-progress-track">
                         <div class="skill-progress-fill" data-target="95"></div>
                     </div>
-                    <div class="skill-progress-label">0%</div>
                 </div>
             </div>
             <!-- CSS3: 92% -->
-            <div class="skill-icon-item scroll-animate" data-skill="92">
+            <div class="skill-icon-item scroll-animate" data-target="92">
                 <i class="fa-brands fa-css3-alt"></i>
                 <span>CSS</span>
+                <div class="skill-percent" data-target="92">0%</div>
                 <div class="skill-progress-wrap">
                     <div class="skill-progress-track">
                         <div class="skill-progress-fill" data-target="92"></div>
                     </div>
-                    <div class="skill-progress-label">0%</div>
                 </div>
             </div>
             <!-- JavaScript: 90% -->
-            <div class="skill-icon-item scroll-animate" data-skill="90">
+            <div class="skill-icon-item scroll-animate" data-target="90">
                 <i class="fa-brands fa-js"></i>
                 <span>JavaScript</span>
+                <div class="skill-percent" data-target="90">0%</div>
                 <div class="skill-progress-wrap">
                     <div class="skill-progress-track">
                         <div class="skill-progress-fill" data-target="90"></div>
                     </div>
-                    <div class="skill-progress-label">0%</div>
                 </div>
             </div>
             <!-- PHP: 93% -->
-            <div class="skill-icon-item scroll-animate" data-skill="93">
+            <div class="skill-icon-item scroll-animate" data-target="93">
                 <i class="fa-brands fa-php"></i>
                 <span>PHP</span>
+                <div class="skill-percent" data-target="93">0%</div>
                 <div class="skill-progress-wrap">
                     <div class="skill-progress-track">
                         <div class="skill-progress-fill" data-target="93"></div>
                     </div>
-                    <div class="skill-progress-label">0%</div>
                 </div>
             </div>
             <!-- WordPress: 91% -->
-            <div class="skill-icon-item scroll-animate" data-skill="91">
+            <div class="skill-icon-item scroll-animate" data-target="91">
                 <i class="fa-brands fa-wordpress"></i>
                 <span>WordPress</span>
+                <div class="skill-percent" data-target="91">0%</div>
                 <div class="skill-progress-wrap">
                     <div class="skill-progress-track">
                         <div class="skill-progress-fill" data-target="91"></div>
                     </div>
-                    <div class="skill-progress-label">0%</div>
                 </div>
             </div>
             <!-- React: 65% -->
-            <div class="skill-icon-item scroll-animate" data-skill="65">
+            <div class="skill-icon-item scroll-animate" data-target="65">
                 <i class="fa-brands fa-react"></i>
                 <span>React</span>
+                <div class="skill-percent" data-target="65">0%</div>
                 <div class="skill-progress-wrap">
                     <div class="skill-progress-track">
                         <div class="skill-progress-fill" data-target="65"></div>
                     </div>
-                    <div class="skill-progress-label">0%</div>
                 </div>
             </div>
         </div>
@@ -1534,8 +1532,8 @@
                 <div class="client">
                     <div class="avatar">TN</div>
                     <div class="info">
-                        <h4>Abdul Wali</h4>
-                        <span>CEO, TECH GUYS Mansehra</span>
+                        <h4>Talha Nawaz</h4>
+                        <span>CEO, Cimt Tech Mansehra</span>
                     </div>
                 </div>
             </div>
@@ -1600,7 +1598,6 @@
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
@@ -1671,7 +1668,7 @@
             }, 400);
 
             /* ==========================================================
-               SKILLS PROGRESS BARS — animate on scroll
+               SKILLS – animate percentage counter & progress bar
             ========================================================== */
             const skillItems = document.querySelectorAll('.skill-icon-item');
 
@@ -1680,23 +1677,24 @@
                     if (entry.isIntersecting) {
                         const item = entry.target;
                         const fill = item.querySelector('.skill-progress-fill');
-                        const label = item.querySelector('.skill-progress-label');
-                        if (!fill) return;
+                        const percentEl = item.querySelector('.skill-percent');
+                        if (!fill || !percentEl) return;
 
                         const target = parseInt(fill.dataset.target, 10);
                         if (!isNaN(target) && target >= 0) {
-                            // Animate fill width
+                            // Animate progress bar width
                             fill.style.width = target + '%';
-                            // Animate label from 0 → target
+
+                            // Animate the percentage number from 0 to target
                             let current = 0;
-                            const step = Math.max(1, Math.floor(target / 40)); // smooth increment
+                            const step = Math.max(1, Math.floor(target / 40));
                             const interval = setInterval(() => {
                                 current += step;
                                 if (current >= target) {
                                     current = target;
                                     clearInterval(interval);
                                 }
-                                label.textContent = current + '%';
+                                percentEl.textContent = current + '%';
                             }, 25);
                         }
                         // Unobserve after animation starts
